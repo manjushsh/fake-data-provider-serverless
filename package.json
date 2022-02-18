@@ -4,7 +4,6 @@
   "description": "Fake Data Generation API",
   "main": "serverless.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "offline": "sls offline start"
   },
   "engines": {

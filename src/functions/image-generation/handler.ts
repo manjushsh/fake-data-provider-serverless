@@ -18,7 +18,6 @@ const imageGeneration: ValidatedEventAPIGatewayProxyEvent<
       backgroundColor,
       textColor,
     });
-
     return formatJSONResponse({ base64: imageBase64 });
   } catch (error) {
     return formatJSONErrorResponse(
@@ -28,7 +27,7 @@ const imageGeneration: ValidatedEventAPIGatewayProxyEvent<
           status: error.status,
         },
       },
-      500
+      error.status
     );
   }
 };

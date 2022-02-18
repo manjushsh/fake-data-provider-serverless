@@ -1,11 +1,11 @@
 import type { AWS } from '@serverless/typescript';
-
 import hello from '@functions/hello';
+import imageGeneration from '@functions/image-generation';
 
 const serverlessConfiguration: AWS = {
   service: 'fake-data-provider-serverless',
   frameworkVersion: '3',
-  plugins: ['serverless-esbuild'],
+  plugins: ['serverless-esbuild', 'serverless-offline'],
   provider: {
     name: 'aws',
     runtime: 'nodejs14.x',
@@ -19,14 +19,14 @@ const serverlessConfiguration: AWS = {
     },
   },
   // import the function via paths
-  functions: { hello },
+  functions: { hello, imageGeneration },
   package: { individually: true },
   custom: {
     esbuild: {
       bundle: true,
       minify: false,
       sourcemap: true,
-      exclude: ['aws-sdk'],
+      exclude: ['aws-sdk', 'canvas'],
       target: 'node14',
       define: { 'require.resolve': undefined },
       platform: 'node',

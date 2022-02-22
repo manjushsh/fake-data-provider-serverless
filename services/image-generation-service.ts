@@ -1,3 +1,5 @@
+import {createCanvas} from 'canvas';
+
 const IMAGE_GENERATION_SERVICE = {
   textToBase64: ({
     text = "Placeholder",
@@ -7,9 +9,7 @@ const IMAGE_GENERATION_SERVICE = {
     backgroundColor = "#ACACAC",
     textColor = "#FEFEFF",
   }) => {
-    const canvas = document.createElement("canvas");
-    canvas.width = width;
-    canvas.height = height;
+    const canvas = createCanvas(width, height);
     const ctx = canvas.getContext("2d");
 
     // Set canvas Background color and apply

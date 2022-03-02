@@ -1,11 +1,11 @@
-import {createCanvas} from 'canvas';
+import { createCanvas } from "canvas";
 
 const IMAGE_GENERATION_SERVICE = {
   textToBase64: ({
     text = "Placeholder",
-    width = 40,
-    height = 40,
-    fontSize = "14px",
+    width = 1920,
+    height = 1080,
+    fontSize = "24px",
     backgroundColor = "#ACACAC",
     textColor = "#FEFEFF",
   }) => {
